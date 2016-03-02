@@ -3,6 +3,7 @@
  */
 
 var connection = require(__base + 'config/mysql');
+
 function Flyers() {
     this.get = function(req, res) {
         connection.acquire(function(err, con){
@@ -11,7 +12,7 @@ function Flyers() {
                 res.json(result);
             });
         });
-    }
+    };
     
     this.create = function(req, res) {
     	var flyerInfo = req.body;
@@ -21,7 +22,10 @@ function Flyers() {
                 res.json(result);
             });
     	});
-    }
+    };
+    
+    this.upload = function(req, res) {
+    };
 
 }
 module.exports = new Flyers();
