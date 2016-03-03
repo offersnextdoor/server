@@ -14,7 +14,7 @@ router.post('/', function(req, res) {
 	flyers.create(req, res);
 });
 
-router.post('/upload', upload.single('thumbnail'), function(req, res) {
+router.post('/upload', upload.single('file'), function(req, res) {
 	flyers.upload(req, res);
 });
 
